@@ -1,0 +1,4 @@
+export PATH=$(brew --prefix coreutils)/libexec/gnubin:"$PATH":~/node_modules/.bin
+export EDITOR="/usr/bin/emacs"
+export MAVEN_OPTS="-Djava.awt.headless"
+export JAVA_OPTS="-Djava.awt.headless"

@@ -1,0 +1,12 @@
+[user]
+	name = ntdaley
+	email = ntdaley@ntdaley.org
+[push]
+	default = simple
+[core]
+	excludesfile = /Users/ntdaley/.gitignore_global
+
+# Any GitHub repo with my username should be checked out r/w by default
+# http://rentzsch.tumblr.com/post/564806957/public-but-hackable-git-submodules
+[url "git@github.com:ntdaley/"]
+  insteadOf = "git://github.com/ntdaley/"

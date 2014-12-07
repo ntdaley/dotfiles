@@ -1,0 +1,28 @@
+alias mysql-start="cd /opt/local ; sudo /opt/local/lib/mysql56/bin/mysqld_safe &"
+alias mysql-stop='/opt/local/lib/mysql56/bin/mysqladmin -u root shutdown -p'
+alias subl='open -a Sublime\ Text '
+alias st='open -a Sublime\ Text '
+alias gimp='open -a GIMP '
+
+
+alias httpdump="sudo tcpdump -i en1 -n -s 0 -w - | grep -a -o -E \"Host\: .*|GET \/.*\""
+
+# OS X has no `md5sum`, so use `md5` as a fallback
+type -t md5sum > /dev/null || alias md5sum="md5"
+
+# Recursively delete `.DS_Store` files
+alias cleanup="find . -name '*.DS_Store' -type f -ls -delete"
+
+# Kill all the tabs in Chrome to free up memory
+# [C] explained: http://www.commandlinefu.com/commands/view/402/exclude-grep-from-your-grepped-output-of-ps-alias-included-in-description
+alias chromekill="ps ux | grep '[C]hrome Helper --type=renderer' | grep -v extension-process | tr -s ' ' | cut -d ' ' -f2 | xargs kill"
+
+# Faster npm for europeans
+command -v npm > /dev/null && alias npme="npm --registry http://registry.npmjs.eu"
+
+
+
+alias chrome='open -a Google\ Chrome '
+
+
+alias grep='grep --exclude-dir .git --exclude-dir .svn --exclude-dir CVS '

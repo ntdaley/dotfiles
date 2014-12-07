@@ -1,0 +1,69 @@
+. /usr/local/etc/bash_completion.d/git-prompt.sh 
+
+function __prompt() {
+	 while test ${#} -gt 0
+	 do
+		TOKEN="$1"
+		if [[ "$1" == 'isRoot' ]];then 
+		   shift
+		   if [[ "$UID" == '0' ]];then
+		      TOKEN="$1"
+		      shift
+		   else
+		      shift
+		      TOKEN="$1"
+		   fi
+		fi
+
+		case "$TOKEN" in
+		     bold) echo -e -n "\033[1m"
+		     ;;
+		     black) echo -e -n "\033[30m"
+		     ;;
+		     red) echo -e -n "\033[31m"
+		     ;;
+		     green) echo -e -n "\033[32m"
+		     ;;
+		     yellow) echo -e -n "\033[33m"
+		     ;;
+		     blue) echo -e -n "\033[34m"
+		     ;;
+		     magenta) echo -e -n "\033[35m"
+		     ;;
+		     cyan) echo -e -n "\033[36m"
+		     ;;
+		     white) echo -e -n "\033[37m"
+		     ;;
+		     reset) echo -e -n "\033[0m"
+		     ;;
+
+		     USER) echo -n "\\u"
+		     ;;
+		     HOST) echo -n "\\h"
+		     ;;
+		     DIR) echo -n "\\w"
+		     ;;
+
+		     GIT) echo -e -n '$(__git_ps1 " (%s)")'
+		     ;;		     
+
+		     *) echo -e -n "$TOKEN"
+		     ;;		    
+		esac
+		shift
+	 done
+
+	 echo -e -n "\033[0m"
+}
+
+PS1=\
+$(__prompt bold isRoot red blue USER)\
+$(__prompt @)\
+$(__prompt magenta HOST)\
+$(__prompt :)\
+$(__prompt bold cyan DIR)\
+' '\
+$(__prompt yellow [ $(basename $(tty)) ] )\
+$(__prompt green GIT)\
+$(__prompt bold isRoot red blue \\$)\
+' '
