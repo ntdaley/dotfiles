@@ -43,6 +43,7 @@ brew cask install google-chrome
 brew cask install google-drive
 brew cask install gimp
 brew cask install inkscape
+brew cask install intellij-idea
 brew cask install mysqlworkbench
 brew cask install skype
 brew cask install sublime-text
