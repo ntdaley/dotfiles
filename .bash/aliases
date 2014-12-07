@@ -29,3 +29,8 @@ alias grep='grep --exclude-dir .git --exclude-dir .svn --exclude-dir CVS '
 
 
 alias update='sudo softwareupdate -i -a; brew update; brew upgrade; brew cleanup; brew cask cleanup; npm install npm -g; npm update -g; sudo gem update --system; sudo gem update'
+
+
+# Undo a `git push`
+alias git-unpush="git push -f origin HEAD^:master"
+alias git-uncommit="git reset --soft HEAD~1"
