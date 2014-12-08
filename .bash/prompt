@@ -1,4 +1,4 @@
-. /usr/local/etc/bash_completion.d/git-prompt.sh 
+command -v brew > /dev/null && [[ -e $(brew --prefix)"/etc/bash_completion.d/git-prompt.sh" ]] && . $(brew --prefix)/etc/bash_completion.d/git-prompt.sh 
 
 function __prompt() {
 	 while test ${#} -gt 0
@@ -44,7 +44,7 @@ function __prompt() {
 		     DIR) echo -n "\\w"
 		     ;;
 
-		     GIT) echo -e -n '$(__git_ps1 " (%s)")'
+		     GIT) [[ "$(type -t __git_ps1)" == 'function' ]] && echo -e -n '$(__git_ps1 " (%s)")'
 		     ;;		     
 
 		     *) echo -e -n "$TOKEN"
