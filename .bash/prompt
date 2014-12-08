@@ -46,7 +46,8 @@ function __prompt() {
 
 		     GIT) [[ "$(type -t __git_ps1)" == 'function' ]] && echo -e -n '$(__git_ps1 " (%s)")'
 		     ;;		     
-
+		     SVN) command -v svn > /dev/null && echo -e -n '$(__svn_prompt)'
+		     ;;
 		     *) echo -e -n "$TOKEN"
 		     ;;		    
 		esac
@@ -64,6 +65,6 @@ $(__prompt :)\
 $(__prompt bold cyan DIR)\
 ' '\
 $(__prompt yellow [ $(basename $(tty)) ] )\
-$(__prompt green GIT)\
+$(__prompt green GIT SVN)\
 $(__prompt bold isRoot red blue \\$)\
 ' '

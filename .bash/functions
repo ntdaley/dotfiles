@@ -1,0 +1,3 @@
+function __svn_prompt () {
+    svn info 2>/dev/null|grep ^Relative\ URL:|sed -E 's/.*\/(trunk|branches\/[^\/]*|tags\/[^\/]*).*/ (\1)/g'
+}
