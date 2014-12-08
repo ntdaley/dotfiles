@@ -30,6 +30,7 @@ chsh -s /usr/local/bin/bash  -u ${USER} root
 
 brew install curl
 brew install git
+brew install icdiff
 brew install lbzip2
 brew install maven
 brew install mongodb
