@@ -43,6 +43,7 @@ brew install z
 
 brew install caskroom/cask/brew-cask
 brew cask install caffeine
+brew cask install cd-to
 brew cask install chromecast
 brew cask install disk-inventory-x
 brew cask install google-chrome
