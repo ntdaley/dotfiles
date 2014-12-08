@@ -1,4 +1,12 @@
-export PATH=$(brew --prefix coreutils)/libexec/gnubin:"$PATH":~/node_modules/.bin
+#Include in path node modules installed in home folder.
+export PATH="$PATH":~/node_modules/.bin
+
+#Include in path brew's copy of core gnu utils
+command -v brew > /dev/null && export PATH=$(brew --prefix coreutils)/libexec/gnubin:"$PATH"
+
+#Use emacs for the editor
 export EDITOR="/usr/bin/emacs"
+
+#Default to headless mode to avoid annoying popup on macs.
 export MAVEN_OPTS="-Djava.awt.headless"
 export JAVA_OPTS="-Djava.awt.headless"
