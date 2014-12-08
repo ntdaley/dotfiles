@@ -16,25 +16,25 @@ function __prompt() {
 		fi
 
 		case "$TOKEN" in
-		     bold) echo -e -n "\033[1m"
+		     bold) echo -e -n "\[\033[1m\]"
 		     ;;
-		     black) echo -e -n "\033[30m"
+		     black) echo -e -n "\[\033[30m\]"
 		     ;;
-		     red) echo -e -n "\033[31m"
+		     red) echo -e -n "\[\033[31m\]"
 		     ;;
-		     green) echo -e -n "\033[32m"
+		     green) echo -e -n "\[\033[32m\]"
 		     ;;
-		     yellow) echo -e -n "\033[33m"
+		     yellow) echo -e -n "\[\033[33m\]"
 		     ;;
-		     blue) echo -e -n "\033[34m"
+		     blue) echo -e -n "\[\033[34m\]"
 		     ;;
-		     magenta) echo -e -n "\033[35m"
+		     magenta) echo -e -n "\[\033[35m\]"
 		     ;;
-		     cyan) echo -e -n "\033[36m"
+		     cyan) echo -e -n "\[\033[36m\]"
 		     ;;
-		     white) echo -e -n "\033[37m"
+		     white) echo -e -n "\[\033[37m\]"
 		     ;;
-		     reset) echo -e -n "\033[0m"
+		     reset) echo -e -n "\[\033[0m\]"
 		     ;;
 
 		     USER) echo -n "\\u"
@@ -53,7 +53,7 @@ function __prompt() {
 		shift
 	 done
 
-	 echo -e -n "\033[0m"
+	 echo -e -n "\[\033[0m\]"
 }
 
 PS1=\
