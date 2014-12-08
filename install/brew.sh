@@ -26,6 +26,7 @@ chsh -s /usr/local/bin/bash  -u ${USER} root
 
 brew install curl
 brew install git
+brew install lbzip2
 brew install maven
 brew install mongodb
 brew install mysql
@@ -41,12 +42,15 @@ brew cask install chromecast
 brew cask install disk-inventory-x
 brew cask install google-chrome
 brew cask install google-drive
+brew cask install google-hangouts
 brew cask install gimp
 brew cask install inkscape
 brew cask install intellij-idea
+brew cask install lastpass
 brew cask install mysqlworkbench
 brew cask install skype
 brew cask install sublime-text
+brew cask install virtualbox
 brew cask install vlc
 
 brew cleanup
