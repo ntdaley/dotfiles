@@ -25,7 +25,7 @@ command -v npm > /dev/null && alias npme="npm --registry http://registry.npmjs.e
 alias chrome='open -a Google\ Chrome '
 
 
-alias grep='grep --exclude-dir .git --exclude-dir .svn --exclude-dir CVS '
+alias grep='grep --exclude-dir .git --exclude-dir .svn --exclude-dir CVS --color=auto'
 
 
 alias update='sudo softwareupdate -i -a; brew update; brew upgrade; brew cleanup; brew cask cleanup; npm install npm -g; npm update -g; sudo gem update --system; sudo gem update'
