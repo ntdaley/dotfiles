@@ -1,4 +1,8 @@
 #!/bin/sh
+
+# command -v brew > /dev/null || ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
+
+
 #update homebrew
 brew update
 
