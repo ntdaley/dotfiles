@@ -34,6 +34,7 @@ brew install icdiff
 brew install lbzip2
 brew install maven
 brew install mongodb
+brew install multitail
 brew install mysql
 brew install node
 brew install unrar
