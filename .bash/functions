@@ -1,3 +1,36 @@
+#!/bin/sh
 function __svn_prompt () {
     svn info 2>/dev/null|grep ^Relative\ URL:|sed -E 's/.*\/(trunk|branches\/[^\/]*|tags\/[^\/]*).*/ (\1)/g'
+}
+
+
+function mvn-generate-master-password () {
+    if [[ ! -e ~/.m2/settings-security.xml ]];then
+        PASSWORD_ENCODED=$(mvn -emp "$(cat /dev/urandom|base64|head -n1)" )
+        cat  > ~/.m2/settings-security.xml << EOF
+<settingsSecurity>
+  <master>${PASSWORD_ENCODED}</master>
+</settingsSecurity>
+EOF
+        echo Created '~/.m2/settings-security.xml'
+    else
+        echo '~/.m2/settings-security.xml' already exists.
+    fi
+}
+
+function mvn-passwd () {
+    mvn-generate-master-password
+
+    echo Please enter your password.  This will replace ALL server passwords in your '~/.m2/settings.xml' file.
+    read -s PASSWORD
+    PASSWORD="$(mvn -ep ${PASSWORD})"
+
+    echo Encrypted password is ${PASSWORD}
+
+    cp ~/.m2/settings.xml ~/.m2/settings.xml.old
+
+    cat ~/.m2/settings.xml | sed "s/<password>[^<]*<\/password>/<password>${PASSWORD}<\/password>/g" > ~/.m2/settings.xml.temp
+    mv ~/.m2/settings.xml.temp ~/.m2/settings.xml
+
+    chmod go-rwx ~/.m2/settings.xml*
 }
