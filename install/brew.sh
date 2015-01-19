@@ -19,8 +19,7 @@ brew install findutils
 brew tap homebrew/dupes
 brew install homebrew/dupes/grep
 
-brew install bash
-brew install bash-completion
+brew install bash bash-completion
 
 grep -q `brew --prefix`/bin/bash /private/etc/shells || sudo bash -c "echo /usr/local/bin/bash >> /private/etc/shells"
 chsh -s /usr/local/bin/bash
@@ -28,37 +27,12 @@ chsh -s /usr/local/bin/bash  -u ${USER} root
 
 
 
-brew install curl
-brew install git
-brew install icdiff
-brew install lbzip2
-brew install maven
-brew install mongodb
-brew install multitail
-brew install mysql
-brew install node
-brew install unrar
-brew install wget
-brew install z
+brew install curl git icdiff lbzip2 maven mongodb multitail mysql node unrar wget xmlstarlet z
 
 
 brew install caskroom/cask/brew-cask
-brew cask install caffeine
-brew cask install cd-to
-brew cask install chromecast
-brew cask install disk-inventory-x
-brew cask install google-chrome
-brew cask install google-drive
-brew cask install google-hangouts
-brew cask install gimp
-brew cask install inkscape
-brew cask install intellij-idea
-brew cask install lastpass
-brew cask install mysqlworkbench
-brew cask install skype
-brew cask install sublime-text
-brew cask install virtualbox
-brew cask install vlc
+brew cask install caffeine cd-to chromecast disk-inventory-x google-chrome google-drive google-hangouts gimp inkscape
+                  intellij-idea lastpass mysqlworkbench skype sublime-text virtualbox vlc
 
 brew cleanup
 brew cask cleanup
