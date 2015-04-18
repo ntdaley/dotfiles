@@ -27,7 +27,7 @@ chsh -s /usr/local/bin/bash  -u ${USER} root
 
 
 
-brew install curl git icdiff lbzip2 maven mongodb multitail mysql node unrar wget xmlstarlet z
+brew install curl fdupes git icdiff jq lbzip2 maven mongodb multitail mysql node unrar wget xmlstarlet z
 
 
 brew install caskroom/cask/brew-cask
