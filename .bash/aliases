@@ -1,7 +1,7 @@
 alias mysql-start="cd /opt/local ; sudo /opt/local/lib/mysql56/bin/mysqld_safe &"
 alias mysql-stop='/opt/local/lib/mysql56/bin/mysqladmin -u root shutdown -p'
-alias subl='open -a Sublime\ Text '
-alias st='open -a Sublime\ Text '
+alias subl='open -a Sublime\ Text\ 2 '
+alias st='open -a Sublime\ Text\ 2 '
 alias gimp='open -a GIMP '
 
 

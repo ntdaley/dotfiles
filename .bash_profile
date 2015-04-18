@@ -1,4 +1,4 @@
-for file in `brew --prefix`/etc/profile.d/* ~/.bash/{extra,prompt,exports,aliases,functions}; do
+for file in `brew --prefix`/etc/profile.d/* ~/.bash/{extra,prompt,exports,aliases,functions,nvm}; do
     [ -r "$file" ] && source "$file"
 done
 unset file
