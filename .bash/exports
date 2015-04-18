@@ -3,6 +3,7 @@ export PATH="$PATH":~/node_modules/.bin
 
 #Include in path brew's copy of core gnu utils
 command -v brew > /dev/null && export PATH=$(brew --prefix coreutils)/libexec/gnubin:"$PATH"
+command -v brew > /dev/null && export MANPATH=$(brew --prefix coreutils)/libexec/gnuman:"$MANPATH"
 
 #Use emacs for the editor
 export EDITOR="/usr/bin/emacs"
