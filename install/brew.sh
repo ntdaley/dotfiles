@@ -1,6 +1,6 @@
 #!/bin/sh
 
-# command -v brew > /dev/null || ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
+command -v brew > /dev/null || ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
 
 
 #update homebrew
@@ -36,3 +36,7 @@ brew cask install caffeine cd-to chromecast disk-inventory-x google-chrome googl
 
 brew cleanup
 brew cask cleanup
+
+
+ln -sfv /usr/local/opt/mongodb/*.plist ~/Library/LaunchAgents
+ln -sfv /usr/local/opt/mysql/*.plist ~/Library/LaunchAgents
